@@ -4,6 +4,7 @@
 - Fork the repository. 
 - Clone the repository in your local machine.
 - Run `rails db:setup`, this will also seed data in the `User` model
+- Run rails webpacker:install to load the assets thing.
 - Run `rails s` to start the server and `rails c` for rails console
 
 ## Requirements
@@ -33,4 +34,4 @@
 
 
 ## Contact us
-If you need any help regarding this assignment or want to join [Commutatus](https://www.commutatus.com/), drop us an email at work@commutatus.com 
+If you need any help regarding this assignment or want to join [Commutatus](https://www.commutatus.com/), drop us an email at work@commutatus.com
