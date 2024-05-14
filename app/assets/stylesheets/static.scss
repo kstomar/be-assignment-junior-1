@@ -11,6 +11,10 @@
   margin: 16px auto 0;
 }
 
+.row-details{
+  display: flex;
+}
+
 .dashboard-wrapper .side-bar-area {
   width: 180px;
 }
@@ -48,6 +52,10 @@
   min-height: 100%;
   margin-left: 24px;
   box-shadow: 0 0 12px;
+}
+
+.edit_tax{
+  margin-left: 25px;
 }
 
 .main-area .top-bar {
@@ -136,6 +144,65 @@
   transition: all .2s  linear;
 }
 
+
+.edit-expenses-list .edit-expense-item {
+  /*position: relative;*/
+  /*align-items: center;*/
+  display: flex;
+  /*justify-content: space-between;*/
+  padding: 8px 16px;
+  transition: all .2s  linear;
+}
+
+.edit-expense-item .item-lhs {
+  font-weight: bold;
+}
+
+
+.edit-expense-item .item-rhs {
+  font-weight: bold;
+}
+
+#expenseDescription{
+  width: 95%;
+  margin-right: 14rem;
+}
+#expenseAmount{
+  width: 70%;
+}
+
+.share-amount-container {
+    display: inline-block;
+}
+
+/* Style for each individual share amount field */
+.share-amount {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the spacing between share amount fields */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+  gap: 10px; /* Adjust the gap between items as needed */
+}
+
+.expense-amount {
+  background-color: #d9d9d9;
+  padding: 9px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 60px;
+}
+
+.tax-form-group{
+  width: 50%;
+}
+
+
 .expenses-list .expense-item:hover {
   background: #f8f8f8;
 }
@@ -185,6 +252,15 @@
   margin-left: 24px;
 }
 
+.expenses-list {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  padding: 20px;
+}
+
 .you-details p:nth-child(1) {
   font-size: 12px;
   line-height: 15px;
@@ -197,4 +273,29 @@
   font-weight: bold;
   margin: 0;
 }
+/* Style for the scrollable checkbox list */
+.scrollable-checkbox-list {
+  max-height: 200px; /* Set the maximum height to enable scrolling */
+  overflow-y: auto; /* Enable vertical scrollbar if needed */
+  border: 1px solid #ccc; /* Optional: Add border for styling */
+  padding: 10px; /* Optional: Add padding for spacing */
+}
+
+.scrollable-checkbox-list label {
+  display: block; /* Display each checkbox on a new line */
+}
+
+/* Style for the friend amount input fields */
+.friend-amount-input {
+  margin-top: 10px; /* Add some space between each friend's input field */
+}
+
+.friend-amount-input label {
+  display: block; /* Display the label on a new line */
+}
+
+.friend-amount-input input {
+  width: 100%; /* Make the input field fill its container */
+}
+
 /* Custom dashboard styles ends */

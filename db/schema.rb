@@ -10,10 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_06_083940) do
+ActiveRecord::Schema.define(version: 2024_05_13_110635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "expenses", force: :cascade do |t|
+    t.text "description"
+    t.float "amount"
+    t.bigint "paid_by_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.float "tax", default: 0.0
+    t.float "tip", default: 0.0
+    t.float "sub_total", default: 0.0
+    t.index ["paid_by_id"], name: "index_expenses_on_paid_by_id"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.integer "friend_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_friends_on_user_id"
+  end
+
+  create_table "settle_expenses", force: :cascade do |t|
+    t.integer "settle_by_id"
+    t.integer "settle_to_id"
+    t.float "amount"
+    t.text "additional_note"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shared_expenses", force: :cascade do |t|
+    t.float "amount"
+    t.text "description"
+    t.integer "share_user_id"
+    t.integer "paid_by_id"
+    t.bigint "expense_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["expense_id"], name: "index_shared_expenses_on_expense_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
